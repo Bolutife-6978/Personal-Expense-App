@@ -31,6 +31,10 @@ class MyHomePage extends StatelessWidget {
       date: DateTime.now(),
     ),
   ];
+  // late String amountInput;
+  // late String titleInput;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,12 +55,33 @@ class MyHomePage extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(10),
                 child: Column(
-                  children: const <Widget>[
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
                     TextField(
+                      controller: titleController,
+                      // onChanged: (value) {
+                      //   // titleInput = value;
+                      // },
                       decoration: InputDecoration(label: Text('Title')),
                     ),
                     TextField(
-                      decoration: InputDecoration(label: Text('Amount')),
+                      controller: amountController,
+
+                      // onChanged: (value) {
+                      //   amountInput = value;
+                      // },
+                      decoration: const InputDecoration(label: Text('Amount')),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        print(titleController.text);
+                        print(amountController.text);
+                      },
+                      style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all<Color>(Colors.purple),
+                      ),
+                      child: const Text('Add Transactios'),
                     )
                   ],
                 ),
@@ -112,4 +137,5 @@ class MyHomePage extends StatelessWidget {
 }
 
 
-//https://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@github.com/Bolutife-6978/Personal-Expense-App.git
+//https://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@github.com/Bolutife-6978/Personal-Expense-App.git
+//https://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@github.com/Bolutife-6978/Personal-Expense-App.git
